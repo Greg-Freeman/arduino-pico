@@ -1,0 +1,103 @@
+#pragma once
+
+#define PICO_RP2350A 0
+
+// For board detection
+#define WEACT_STUDIO_RP2350B_CORE
+
+// --- BOARD SPECIFIC ---
+#define WEACT_STUDIO_RP2350B_USER_SW_PIN 23
+#define WEACT_STUDIO_RP2350B_PSRAM_CS_PIN 0
+
+// --- UART ---
+#ifndef PICO_DEFAULT_UART
+#define PICO_DEFAULT_UART 0
+#endif
+#ifndef PICO_DEFAULT_UART_TX_PIN
+#define PICO_DEFAULT_UART_TX_PIN 12
+#endif
+#ifndef PICO_DEFAULT_UART_RX_PIN
+#define PICO_DEFAULT_UART_RX_PIN 13
+#endif
+
+// --- LED ---
+#ifndef PICO_DEFAULT_LED_PIN
+#define PICO_DEFAULT_LED_PIN 25
+#endif
+
+// --- I2C ---
+#ifndef PICO_DEFAULT_I2C
+#define PICO_DEFAULT_I2C 0
+#endif
+#ifndef PICO_DEFAULT_I2C_SDA_PIN
+#define PICO_DEFAULT_I2C_SDA_PIN 8
+#endif
+#ifndef PICO_DEFAULT_I2C_SCL_PIN
+#define PICO_DEFAULT_I2C_SCL_PIN 9
+#endif
+
+// --- SPI ---
+#ifndef PICO_DEFAULT_SPI
+#define PICO_DEFAULT_SPI 0
+#endif
+#ifndef PICO_DEFAULT_SPI_SCK_PIN
+#define PICO_DEFAULT_SPI_SCK_PIN 18
+#endif
+#ifndef PICO_DEFAULT_SPI_TX_PIN
+#define PICO_DEFAULT_SPI_TX_PIN 19
+#endif
+#ifndef PICO_DEFAULT_SPI_RX_PIN
+#define PICO_DEFAULT_SPI_RX_PIN 16
+#endif
+#ifndef PICO_DEFAULT_SPI_CSN_PIN
+#define PICO_DEFAULT_SPI_CSN_PIN 17
+#endif
+
+// --- FLASH ---
+#define PICO_BOOT_STAGE2_CHOOSE_W25Q080 1
+
+#ifndef PICO_FLASH_SPI_CLKDIV
+#define PICO_FLASH_SPI_CLKDIV 2
+#endif
+
+#ifndef PICO_FLASH_SIZE_BYTES
+#define PICO_FLASH_SIZE_BYTES (16 * 1024 * 1024)
+#endif
+
+#ifndef PICO_RP2350_A2_SUPPORTED
+#define PICO_RP2350_A2_SUPPORTED 1
+#endif
+
+// LEDs
+#define PIN_LED        (25u)
+
+// Serial
+#define PIN_SERIAL1_TX (0u)
+#define PIN_SERIAL1_RX (1u)
+
+#define PIN_SERIAL2_TX (8u)
+#define PIN_SERIAL2_RX (9u)
+
+// SPI
+#define PIN_SPI0_MISO  PICO_DEFAULT_SPI_RX_PIN
+#define PIN_SPI0_MOSI  PICO_DEFAULT_SPI_TX_PIN
+#define PIN_SPI0_SCK   PICO_DEFAULT_SPI_SCK_PIN
+#define PIN_SPI0_SS    PICO_DEFAULT_SPI_CSN_PIN
+
+#define PIN_SPI1_MISO  (12u)
+#define PIN_SPI1_MOSI  (15u)
+#define PIN_SPI1_SCK   (14u)
+#define PIN_SPI1_SS    (13u)
+
+// Wire
+#define PIN_WIRE0_SDA  PICO_DEFAULT_I2C_SDA_PIN
+#define PIN_WIRE0_SCL  PICO_DEFAULT_I2C_SCL_PIN
+
+#define PIN_WIRE1_SDA  (255u)
+#define PIN_WIRE1_SCL  (255u)
+
+#define SERIAL_HOWMANY (3u)
+#define SPI_HOWMANY    (2u)
+#define WIRE_HOWMANY   (2u)
+
+#include "../generic/common.h"
